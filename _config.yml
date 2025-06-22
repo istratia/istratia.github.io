@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
 title: Andreea's homepage
 description: hi whats up
+- name: Configure GitHub Pages
+  uses: actions/configure-pages@v5
