@@ -10,6 +10,7 @@ also:
 * asterisks
 * create
 * lists :0
-**asterisks also make things bold**
-*and italic*
-also you can link a url but i dont have a url to link so yeah
+* **asterisks also make things bold**
+* *and italic*
+* also you can link a url but i dont have a url to link so yeah
+* i dont know how to make something a new line without making a new list thingy though...
