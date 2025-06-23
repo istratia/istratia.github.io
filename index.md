@@ -60,8 +60,8 @@ description: Welcome to the Glen Rock Historical and Preservation Society - Pres
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <a href="/heritage-trail" class="group">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                        <!-- Add image here -->
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="/assets/images/heritage-trail.jpg" alt="Glen Rock Heritage Trail" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold group-hover:text-grhps-accent">Heritage Trail</h3>
@@ -72,8 +72,8 @@ description: Welcome to the Glen Rock Historical and Preservation Society - Pres
             
             <a href="/gallery" class="group">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                        <!-- Add image here -->
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="/assets/images/photo-gallery.jpg" alt="Glen Rock Historical Photos" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold group-hover:text-grhps-accent">Photo Gallery</h3>
@@ -84,8 +84,8 @@ description: Welcome to the Glen Rock Historical and Preservation Society - Pres
             
             <a href="/road2liberty" class="group">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                        <!-- Add image here -->
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="/assets/images/road2liberty.jpg" alt="Glen Rock Road to Liberty" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold group-hover:text-grhps-accent">Road2Liberty</h3>
@@ -96,8 +96,8 @@ description: Welcome to the Glen Rock Historical and Preservation Society - Pres
             
             <a href="/veteran-banners" class="group">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                        <!-- Add image here -->
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="/assets/images/veteran-banners.jpg" alt="Glen Rock Veteran Banners" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold group-hover:text-grhps-accent">Veteran Banners</h3>

@@ -42,6 +42,22 @@ bundle exec jekyll serve
 
 The site will be available at `http://localhost:4000`
 
+## Required Images
+
+The following images need to be placed in the `/assets/images/` directory:
+
+1. `glen-rock-hero.jpg` - Hero section background image
+2. `heritage-trail.jpg` - Image for Heritage Trail section
+3. `photo-gallery.jpg` - Image for Photo Gallery section
+4. `road2liberty.jpg` - Image for Road2Liberty section
+5. `veteran-banners.jpg` - Image for Veteran Banners section
+
+Image requirements:
+- Format: JPG/JPEG
+- Aspect ratio: 16:9 for featured resources
+- Resolution: Minimum 1200x675 pixels recommended
+- File size: Optimize for web (< 500KB per image)
+
 ## Contributing
 
 1. Create a new branch for your feature
