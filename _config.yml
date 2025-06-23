@@ -1,3 +1,36 @@
-theme: jekyll-theme-minimal
-title: andreea is awesome
-description: did you know that andreea is awesome because i didn't and its the coolest fact ever
+title: Glen Rock Historical and Preservation Society
+description: Preserving and sharing the history of Glen Rock, New Jersey
+url: https://www.glenrockhistory.org
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  gallery:
+    output: true
+  resources:
+    output: true
+  events:
+    output: true
+  projects:
+    output: true
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "_gallery"
+    values:
+      layout: "gallery"

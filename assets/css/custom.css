@@ -1,0 +1,150 @@
+/* Custom styles beyond Tailwind */
+
+/* Typography enhancements */
+.prose h1, .prose h2, .prose h3 {
+    color: #1a4d2e; /* grhps-primary */
+}
+
+.prose a {
+    color: #1a4d2e;
+    text-decoration: none;
+    border-bottom: 1px solid #9b8b6c;
+}
+
+.prose a:hover {
+    color: #d4a373;
+    border-bottom-color: #d4a373;
+}
+
+/* Custom list styles */
+.prose ul:not(.list-none) {
+    list-style-type: none;
+    padding-left: 1.5em;
+}
+
+.prose ul:not(.list-none) li::before {
+    content: "•";
+    color: #9b8b6c;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Image enhancements */
+.prose img {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom blockquote styling */
+.prose blockquote {
+    border-left: 4px solid #d4a373;
+    background-color: #f8f7f6;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+    content: none;
+}
+
+/* Table enhancements */
+.prose table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.prose thead {
+    background-color: #1a4d2e;
+    color: white;
+}
+
+.prose th {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.prose td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.prose tr:last-child td {
+    border-bottom: none;
+}
+
+/* Form styling */
+.form-input {
+    @apply rounded-lg border-gray-300 shadow-sm focus:border-grhps-primary focus:ring-grhps-primary;
+}
+
+.form-select {
+    @apply rounded-lg border-gray-300 shadow-sm focus:border-grhps-primary focus:ring-grhps-primary;
+}
+
+.form-checkbox {
+    @apply rounded text-grhps-primary focus:ring-grhps-primary;
+}
+
+.form-radio {
+    @apply text-grhps-primary focus:ring-grhps-primary;
+}
+
+/* Button variations */
+.btn-primary {
+    @apply bg-grhps-primary hover:bg-grhps-primary/90 text-white font-bold py-2 px-4 rounded-lg transition duration-300;
+}
+
+.btn-secondary {
+    @apply bg-grhps-secondary hover:bg-grhps-secondary/90 text-white font-bold py-2 px-4 rounded-lg transition duration-300;
+}
+
+.btn-accent {
+    @apply bg-grhps-accent hover:bg-grhps-accent/90 text-white font-bold py-2 px-4 rounded-lg transition duration-300;
+}
+
+.btn-outline {
+    @apply border-2 border-grhps-primary text-grhps-primary hover:bg-grhps-primary hover:text-white font-bold py-2 px-4 rounded-lg transition duration-300;
+}
+
+/* Card variations */
+.card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden;
+}
+
+.card-hover {
+    @apply transition duration-300 hover:shadow-xl;
+}
+
+/* Navigation enhancements */
+.nav-link {
+    @apply text-gray-700 hover:text-grhps-primary transition duration-300;
+}
+
+.nav-link.active {
+    @apply text-grhps-primary font-semibold;
+}
+
+/* Utility classes */
+.section-padding {
+    @apply py-16;
+}
+
+.container-padding {
+    @apply px-4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .section-padding {
+        @apply py-8;
+    }
+}

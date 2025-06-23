@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'grhps-primary': '#1a4d2e',
+                        'grhps-secondary': '#9b8b6c',
+                        'grhps-accent': '#d4a373'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    
+    {% seo %}
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-2xl font-bold text-grhps-primary">
+                    {{ site.title }}
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button type="button" class="lg:hidden" aria-label="Toggle menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                
+                <!-- Desktop menu -->
+                <div class="hidden lg:flex lg:items-center lg:space-x-8">
+                    <a href="/about" class="text-gray-700 hover:text-grhps-primary">About</a>
+                    <a href="/road2liberty" class="text-gray-700 hover:text-grhps-primary">Road2Liberty</a>
+                    <a href="/gallery" class="text-gray-700 hover:text-grhps-primary">Gallery</a>
+                    <a href="/heritage-trail" class="text-gray-700 hover:text-grhps-primary">Heritage Trail</a>
+                    <a href="/resources" class="text-gray-700 hover:text-grhps-primary">Resources</a>
+                    <a href="/veteran-banners" class="text-gray-700 hover:text-grhps-primary">Veteran Banners</a>
+                    <a href="/donate" class="text-gray-700 hover:text-grhps-primary">Donate</a>
+                    <a href="/more" class="text-gray-700 hover:text-grhps-primary">More</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden mt-4 lg:hidden">
+                <div class="flex flex-col space-y-4">
+                    <a href="/about" class="text-gray-700 hover:text-grhps-primary">About</a>
+                    <a href="/road2liberty" class="text-gray-700 hover:text-grhps-primary">Road2Liberty</a>
+                    <a href="/gallery" class="text-gray-700 hover:text-grhps-primary">Gallery</a>
+                    <a href="/heritage-trail" class="text-gray-700 hover:text-grhps-primary">Heritage Trail</a>
+                    <a href="/resources" class="text-gray-700 hover:text-grhps-primary">Resources</a>
+                    <a href="/veteran-banners" class="text-gray-700 hover:text-grhps-primary">Veteran Banners</a>
+                    <a href="/donate" class="text-gray-700 hover:text-grhps-primary">Donate</a>
+                    <a href="/more" class="text-gray-700 hover:text-grhps-primary">More</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-grhps-primary text-white mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Visit Us</h3>
+                    <p>The Museum at the Station<br>
+                    Main Line Train Station<br>
+                    Glen Rock, NJ</p>
+                    <p class="mt-2">Open last Sunday of each month<br>
+                    1:00 PM - 3:00 PM</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/events" class="hover:text-grhps-accent">Events</a></li>
+                        <li><a href="/newsletters" class="hover:text-grhps-accent">Newsletters</a></li>
+                        <li><a href="/contact" class="hover:text-grhps-accent">Contact Us</a></li>
+                        <li><a href="/donate" class="hover:text-grhps-accent">Support GRHPS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <p>Follow us on social media for updates and historical facts about Glen Rock.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <!-- Add social media icons/links here -->
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-grhps-accent text-center">
+                <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('button[aria-label="Toggle menu"]');
+            const mobileMenu = document.querySelector('.lg\\:hidden .flex-col');
+            
+            menuButton.addEventListener('click', function() {
+                mobileMenu.parentElement.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
