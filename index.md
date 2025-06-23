@@ -1,7 +1,7 @@
 ---
 layout: default
-title: andreea is awesome
-description: did you know that andreea is awesome because i didn't and its the coolest fact ever
+title: Andreea's homepage
+description: hi whats up
 ---
 # markdown
 ## apparently theres a thing called markdown
