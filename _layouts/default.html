@@ -59,16 +59,57 @@
             </div>
             
             <!-- Mobile menu -->
-            <div class="hidden mt-4 lg:hidden">
+            <div class="hidden mt-4 lg:hidden bg-white rounded-lg shadow-lg p-4">
                 <div class="flex flex-col space-y-4">
-                    <a href="/about" class="text-gray-700 hover:text-grhps-primary">About</a>
-                    <a href="/road2liberty" class="text-gray-700 hover:text-grhps-primary">Road2Liberty</a>
-                    <a href="/gallery" class="text-gray-700 hover:text-grhps-primary">Gallery</a>
-                    <a href="/heritage-trail" class="text-gray-700 hover:text-grhps-primary">Heritage Trail</a>
-                    <a href="/resources" class="text-gray-700 hover:text-grhps-primary">Resources</a>
-                    <a href="/veteran-banners" class="text-gray-700 hover:text-grhps-primary">Veteran Banners</a>
-                    <a href="/donate" class="text-gray-700 hover:text-grhps-primary">Donate</a>
-                    <a href="/more" class="text-gray-700 hover:text-grhps-primary">More</a>
+                    <a href="/about" class="text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50">About</a>
+                    <a href="/road2liberty" class="text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50">Road2Liberty</a>
+                    <div class="relative group">
+                        <button class="w-full text-left text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-between">
+                            <span>Gallery</span>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4">
+                            <a href="/gallery/honor-roll" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Honor Roll</a>
+                            <a href="/gallery/photos" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Photos</a>
+                            <a href="/gallery/videos" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Videos</a>
+                            <a href="/gallery/911-memories" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">9-11 Memories</a>
+                        </div>
+                    </div>
+                    <a href="/heritage-trail" class="text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50">Heritage Trail</a>
+                    <div class="relative group">
+                        <button class="w-full text-left text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-between">
+                            <span>Resources</span>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4">
+                            <a href="/resources/carl-kemm-loven" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Carl Kemm Loven</a>
+                            <a href="/resources/historic-sites" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Historic Sites Survey</a>
+                            <a href="/resources/house-history" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">House History Tips</a>
+                            <a href="/resources/archives" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">News Archives</a>
+                            <a href="/resources/organizations" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">History Organizations</a>
+                        </div>
+                    </div>
+                    <a href="/veteran-banners" class="text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50">Veteran Banners</a>
+                    <a href="/donate" class="text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50">Donate</a>
+                    <div class="relative group">
+                        <button class="w-full text-left text-gray-700 hover:text-grhps-primary px-4 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-between">
+                            <span>More</span>
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4">
+                            <a href="/blog" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Blog</a>
+                            <a href="/events" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Events</a>
+                            <a href="/newsletters" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Newsletters</a>
+                            <a href="/projects" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">GRHPS Projects</a>
+                            <a href="/contact" class="block text-gray-700 hover:text-grhps-primary px-4 py-2">Contact Us</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -104,7 +145,27 @@
                     <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
                     <p>Follow us on social media for updates and historical facts about Glen Rock.</p>
                     <div class="mt-4 flex space-x-4">
-                        <!-- Add social media icons/links here -->
+                        <a href="https://www.facebook.com/GlenRockHistory" class="text-white hover:text-grhps-accent" aria-label="Facebook">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/glenrockhistory" class="text-white hover:text-grhps-accent" aria-label="Instagram">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 011.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772 4.915 4.915 0 01-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+                                <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm5-8a1 1 0 100-2 1 1 0 000 2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/GlenRockHistory" class="text-white hover:text-grhps-accent" aria-label="YouTube">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@glenrockhistory.org" class="text-white hover:text-grhps-accent" aria-label="Email">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -117,13 +178,50 @@
     <!-- JavaScript for mobile menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
             const menuButton = document.querySelector('button[aria-label="Toggle menu"]');
-            const mobileMenu = document.querySelector('.lg\\:hidden .flex-col');
+            const mobileMenu = document.querySelector('.lg\\:hidden.bg-white');
             
             menuButton.addEventListener('click', function() {
-                mobileMenu.parentElement.classList.toggle('hidden');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Mobile dropdown menus
+            const dropdownButtons = document.querySelectorAll('.lg\\:hidden button');
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const dropdown = this.nextElementSibling;
+                    const arrow = this.querySelector('svg');
+                    
+                    // Close other dropdowns
+                    dropdownButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.nextElementSibling.classList.add('hidden');
+                            otherButton.querySelector('svg').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
             });
         });
     </script>
+
+    <!-- Add smooth scroll behavior -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </body>
 </html>
