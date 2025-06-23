@@ -5,9 +5,11 @@ description: did you know that andreea is awesome because i didn't and its the c
 ---
 # markdown
 ## apparently theres a thing called markdown
-markdown is supposedly supposed to make things headings and subheadings if you do a certain amount of hashtags
+markdown is supposedly supposed to make things headings and subheadings if you do a certain amount of hashtags i think but the last time i did it it wasnt working so idk if it'll work but it looks like its working so hopefully it is
 also:
 * asterisks
 * create
 * lists :0
+**asterisks also make things bold**
+*and italic*
 also you can link a url but i dont have a url to link so yeah
