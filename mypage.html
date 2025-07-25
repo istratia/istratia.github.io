@@ -1,8 +1,125 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>My Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .map-container {
+            text-align: center;
+            max-width: 100%;
+        }
+        
+        .main-map {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border: 3px solid #fff;
+        }
+        
+        .close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #ccc;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-<h1>My Page</h1>
+    <div class="instructions">
+        <h1>Interactive Map</h1>
+        <p>Click on different sections of the map to view detailed plates</p>
+    </div>
+    
+    <div class="map-container">
+        <img src="./assets/images/index-map.png" alt="Index Map" class="main-map" usemap="#mapregions">
+        
+        <map name="mapregions">
+            <!-- Example clickable area - you'll need to adjust coordinates based on your map -->
+            <area shape="rect" coords="10,10,50,50" href="#" onclick="openModal('./assets/images/plate-17.png', 'Plate 17')" alt="Plate 17 Region">
+            <!-- Add more areas as needed -->
+        </map>
+    </div>
+    
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+        </div>
+    </div>
+    
+    <script>
+        function openModal(imageSrc, altText) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalImg.alt = altText;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
