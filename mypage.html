@@ -11,19 +11,19 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
         }
-        
+
         .map-container {
             text-align: center;
             max-width: 100%;
         }
-        
+
         .main-map {
             max-width: 100%;
             height: auto;
             border: 2px solid #333;
             cursor: pointer;
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -34,20 +34,20 @@
             height: 100%;
             background-color: rgba(0,0,0,0.8);
         }
-        
+
         .modal-content {
             position: relative;
             margin: 5% auto;
             max-width: 90%;
             max-height: 90%;
         }
-        
+
         .modal-image {
             width: 100%;
             height: auto;
             border: 3px solid #fff;
         }
-        
+
         .close {
             position: absolute;
             top: -40px;
@@ -57,69 +57,58 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         .close:hover {
             color: #ccc;
         }
-        
+
         .instructions {
             text-align: center;
             margin-bottom: 20px;
             color: #666;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
 </head>
 <body>
     <div class="instructions">
         <h1>Interactive Map</h1>
-        <p>Click on different sections of the map to view detailed plates</p>
+        <p>Click on the numbers on the map to view detailed plates</p>
     </div>
-    
+
     <div class="map-container">
-        <img src="./assets/images/index-map.png" alt="Index Map" class="main-map" usemap="#mapregions">
-        
-        <map name="mapregions">
-            <!-- Example clickable area - you'll need to adjust coordinates based on your map -->
-            <area shape="rect" coords="10,10,50,50" href="#" onclick="openModal('./assets/images/plate-17.png', 'Plate 17')" alt="Plate 17 Region">
-            <!-- Add more areas as needed -->
+        <img src="./assets/images/index-map.png" alt="Interactive map" usemap="#mapcoords" />
+        <map name="mapcoords">
+            <area shape="rect" coords=" " href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 1">
+            <area shape="rect" coords="840,290,860,310" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 2">
+            <area shape="rect" coords="775,205,800,225" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 3">
+            <area shape="rect" coords="695,265,720,290" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 4">
+            <area shape="rect" coords="635,195,655,215" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 5">
+            <area shape="rect" coords="550,160,575,180" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 6">
+            <area shape="rect" coords="540,275,560,300" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 7">
+            <area shape="rect" coords="450,335,475,355" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 8">
+            <area shape="rect" coords="430,440,455,460" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 9">
+            <area shape="rect" coords="550,430,570,450" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 10">
+            <area shape="rect" coords="625,345,645,365" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 11">
+            <area shape="rect" coords="765,325,785,350" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 12">
+            <area shape="rect" coords="965,355,985,380" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 13">
+            <area shape="rect" coords="865,450,890,470" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 14">
+            <area shape="rect" coords="775,450,800,470" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 15">
+            <area shape="rect" coords="650,450,675,470" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 16">
+            <area shape="rect" coords="560,530,585,550" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 17">
+            <area shape="rect" coords="465,515,490,540" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 18">
+            <area shape="rect" coords="370,565,390,585" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 19">
+            <area shape="rect" coords="650,575,670,600" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 20">
+            <area shape="rect" coords="770,580,790,605" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 21">
+            <area shape="rect" coords="905,590,930,610" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 22">
+            <area shape="rect" coords="995,490,1015,510" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 23">
+            <area shape="rect" coords="1020,600,1040,620" href="./assets/images/plate-17.png" data-fancybox="gallery" alt="Plate 24">
         </map>
     </div>
-    
-    <div id="imageModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" class="modal-image" src="" alt="">
-        </div>
-    </div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
-        function openModal(imageSrc, altText) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            
-            modal.style.display = 'block';
-            modalImg.src = imageSrc;
-            modalImg.alt = altText;
-        }
-        
-        function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
-        
-        // Close modal when clicking outside the image
-        window.onclick = function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+        Fancybox.bind('[data-fancybox]', {});    
     </script>
 </body>
 </html>
