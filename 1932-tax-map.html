@@ -15,13 +15,11 @@
         .map-container {
             text-align: center;
             max-width: 100%;
-            max-height: 80vh;
-            overflow: auto;
-            border: 1px solid #ddd;
         }
 
         .main-map {
             max-width: 100%;
+            max-height: 80vh;
             height: auto;
             border: 2px solid #333;
             cursor: pointer;
@@ -42,7 +40,7 @@
     </div>
 
     <div class="map-container">
-        <img src="./assets/1932-images/1932-index-map.jpg" alt="1932 Glen Rock Tax Map Index with clickable numbered plates" usemap="#mapcoords" />
+        <img src="./assets/1932-images/1932-index-map.jpg" alt="1932 Glen Rock Tax Map Index with clickable numbered plates" usemap="#mapcoords" class="main-map" />
         <map name="mapcoords">
             <area shape="rect" coords="1421,419,1449,447" href="./assets/1932-images/1932-plate-01.jpg" data-fancybox="gallery" alt="Plate 1">
             <area shape="rect" coords="1292,368,1320,396" href="./assets/1932-images/1932-plate-02.jpg" data-fancybox="gallery" alt="Plate 2">
@@ -80,7 +78,37 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
-        Fancybox.bind('[data-fancybox]', {});    
+        Fancybox.bind('[data-fancybox]', {});
+        
+        function scaleImageMap() {
+            const img = document.querySelector('.main-map');
+            const map = document.querySelector('map[name="mapcoords"]');
+            const areas = map.querySelectorAll('area');
+            
+            img.onload = function() {
+                const scaleX = img.clientWidth / img.naturalWidth;
+                const scaleY = img.clientHeight / img.naturalHeight;
+                
+                areas.forEach(area => {
+                    const coords = area.dataset.originalCoords || area.getAttribute('coords');
+                    if (!area.dataset.originalCoords) {
+                        area.dataset.originalCoords = coords;
+                    }
+                    
+                    const coordsArray = coords.split(',').map(Number);
+                    const scaledCoords = coordsArray.map((coord, index) => {
+                        return Math.round(coord * (index % 2 === 0 ? scaleX : scaleY));
+                    });
+                    
+                    area.setAttribute('coords', scaledCoords.join(','));
+                });
+            };
+            
+            if (img.complete) img.onload();
+        }
+        
+        scaleImageMap();
+        window.addEventListener('resize', scaleImageMap);
     </script>
 </body>
 </html>
