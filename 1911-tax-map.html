@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .map-container {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .main-map {
+            max-width: 100%;
+            max-height: 80vh;
+            height: auto;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+
+
+
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
+</head>
+<body>
+    <div class="instructions">
+        <h1>1911 Interactive Tax Map</h1>
+        <p>Click on the circled numbers on the map to view detailed plates</p>
+    </div>
+
+    <div class="map-container">
+        <img src="./assets/1911-images/1911-index-map.jpg" alt="1911 Glen Rock Tax Map Index with clickable numbered plates" usemap="#mapcoords" class="main-map" />
+        <map name="mapcoords">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-01.jpg" data-fancybox="gallery" alt="Plate 1">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-02.jpg" data-fancybox="gallery" alt="Plate 2">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-03.jpg" data-fancybox="gallery" alt="Plate 3">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-04.jpg" data-fancybox="gallery" alt="Plate 4">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-05.jpg" data-fancybox="gallery" alt="Plate 5">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-06.jpg" data-fancybox="gallery" alt="Plate 6">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-07.jpg" data-fancybox="gallery" alt="Plate 7">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-08.jpg" data-fancybox="gallery" alt="Plate 8">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-09.jpg" data-fancybox="gallery" alt="Plate 9">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-10.jpg" data-fancybox="gallery" alt="Plate 10">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-11.jpg" data-fancybox="gallery" alt="Plate 11">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-12.jpg" data-fancybox="gallery" alt="Plate 12">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-13.jpg" data-fancybox="gallery" alt="Plate 13">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-14.jpg" data-fancybox="gallery" alt="Plate 14">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-15.jpg" data-fancybox="gallery" alt="Plate 15">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-16.jpg" data-fancybox="gallery" alt="Plate 16">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-17.jpg" data-fancybox="gallery" alt="Plate 17">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-18.jpg" data-fancybox="gallery" alt="Plate 18">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-19.jpg" data-fancybox="gallery" alt="Plate 19">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-20.jpg" data-fancybox="gallery" alt="Plate 20">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-21.jpg" data-fancybox="gallery" alt="Plate 21">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-22.jpg" data-fancybox="gallery" alt="Plate 22">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-23.jpg" data-fancybox="gallery" alt="Plate 23">
+            <area shape="rect" coords="" href="./assets/1911-images/1911-plate-24.jpg" data-fancybox="gallery" alt="Plate 24">
+        </map>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind('[data-fancybox]', {});
+        
+        function scaleImageMap() {
+            const img = document.querySelector('.main-map');
+            const map = document.querySelector('map[name="mapcoords"]');
+            const areas = map.querySelectorAll('area');
+            
+            img.onload = function() {
+                const scaleX = img.clientWidth / img.naturalWidth;
+                const scaleY = img.clientHeight / img.naturalHeight;
+                
+                areas.forEach(area => {
+                    const coords = area.dataset.originalCoords || area.getAttribute('coords');
+                    if (!area.dataset.originalCoords) {
+                        area.dataset.originalCoords = coords;
+                    }
+                    
+                    const coordsArray = coords.split(',').map(Number);
+                    const scaledCoords = coordsArray.map((coord, index) => {
+                        return Math.round(coord * (index % 2 === 0 ? scaleX : scaleY));
+                    });
+                    
+                    area.setAttribute('coords', scaledCoords.join(','));
+                });
+            };
+            
+            if (img.complete) img.onload();
+        }
+        
+        scaleImageMap();
+        window.addEventListener('resize', scaleImageMap);
+    </script>
+</body>
+</html>
